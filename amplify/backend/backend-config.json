@@ -1,6 +1,6 @@
 {
   "auth": {
-    "signupappb5505931": {
+    "signupappbf056ac1": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -13,7 +13,9 @@
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
-          "EMAIL"
+          "BIRTHDATE",
+          "FAMILY_NAME",
+          "GIVEN_NAME"
         ],
         "socialProviders": [],
         "usernameAttributes": [],
