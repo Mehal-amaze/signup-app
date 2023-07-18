@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-import Dashboard from './components/Dashboard';
-import store from './redux/store'; 
+//import Dashboard from './components/Dashboard';
+//import store from './redux/store'; 
 
 function App() {
   const signUpConfig = {
