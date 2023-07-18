@@ -1,24 +1,71 @@
-import logo from "./logo.svg";
-import "@aws-amplify/ui-react/styles.css";
-import {
-  withAuthenticator,
-  Button,
-  Heading,
-  Image,
-  View,
-  Card,
-} from "@aws-amplify/ui-react";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import Dashboard from './components/Dashboard';
+import store from './redux/store'; 
 
-function App({ signOut }) {
+function App() {
+  const signUpConfig = {
+    header: 'Create a new account',
+    hideAllDefaults: true,
+    defaultCountryCode: '1',
+    signUpFields: [
+      {
+        label: 'Email',
+        key: 'email',
+        required: true,
+        displayOrder: 1,
+        type: 'string'
+      },
+      {
+        label: 'Password',
+        key: 'password',
+        required: true,
+        displayOrder: 2,
+        type: 'password'
+      },
+      {
+        label: 'Given Name',
+        key: 'given_name',
+        required: true,
+        displayOrder: 3,
+        type: 'string'
+      },
+      {
+        label: 'Family Name',
+        key: 'family_name',
+        required: true,
+        displayOrder: 4,
+        type: 'string'
+      },
+      {
+        label: 'Birthdate',
+        key: 'birthdate',
+        required: true,
+        displayOrder: 5,
+        type: 'string'
+      },
+    ]
+  };
+
   return (
-    <View className="App">
-      <Card>
-        <Image src={logo} className="App-logo" alt="logo" />
-        <Heading level={1}>We now have Auth!</Heading>
-      </Card>
-      <Button onClick={signOut}>Sign Out</Button>
-    </View>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <h1>COB Portal</h1> 
+          <Routes>
+            <Route path="/dashboard" element={
+              <Authenticator usernameAlias="email" signUpConfig={signUpConfig}>
+                <Dashboard />
+              </Authenticator>
+            } />
+          </Routes>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
-export default withAuthenticator(App);
+export default App;
