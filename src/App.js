@@ -51,20 +51,20 @@ function App() {
   };
 
   return (
-    <Provider store={store}>
-      <Router>
+    
+      
         <div className="App">
           <h1>COB Portal</h1> 
-          <Routes>
-            <Route path="/dashboard" element={
+          
+            
               <Authenticator usernameAlias="email" signUpConfig={signUpConfig}>
-                <Dashboard />
+                
               </Authenticator>
-            } />
-          </Routes>
+            
+          
         </div>
-      </Router>
-    </Provider>
+      
+    
   );
 }
 
