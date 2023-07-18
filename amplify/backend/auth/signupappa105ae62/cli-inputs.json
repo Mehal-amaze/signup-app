@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "signupapp5a8324eb_identitypool_5a8324eb",
+    "identityPoolName": "signupappa105ae62_identitypool_a105ae62",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "signup5a8324eb",
-    "userPoolName": "signupapp5a8324eb_userpool_5a8324eb",
+    "resourceNameTruncated": "signupa105ae62",
+    "userPoolName": "signupappa105ae62_userpool_a105ae62",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -20,7 +20,9 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "email"
+      "birthdate",
+      "family_name",
+      "given_name"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
@@ -31,12 +33,13 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "signup5a8324eb_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "signupa105ae62_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "5a8324eb",
-    "resourceName": "signupapp5a8324eb",
+    "sharedId": "a105ae62",
+    "resourceName": "signupappa105ae62",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
+    "triggers": {},
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
