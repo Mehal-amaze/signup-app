@@ -5,7 +5,6 @@ import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 //import Dashboard from './components/Dashboard';
 //import store from './redux/store'; 
-import { AmplifySignUp } from "@aws-amplify/ui-react";
 
 function App() {
   const signUpConfig = {
@@ -53,17 +52,15 @@ function App() {
 
   return (
     
-      
         <div className="App">
           <h1>COB Portal</h1> 
-            <Authenticator usernameAlias="email" formFields={signUpConfig}>
-              
-            </Authenticator>
+              <Authenticator usernameAlias="email" signUpConfig={signUpConfig}>
+                
+              </Authenticator>
             
           
         </div>
       
-    
   );
 }
 
