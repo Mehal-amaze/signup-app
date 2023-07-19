@@ -7,11 +7,11 @@ import '@aws-amplify/ui-react/styles.css';
 //import store from './redux/store'; 
 
 function App() {
-  const formFields = {
+  const signUpConfig = {
     header: 'Create a new account',
     hideAllDefaults: true,
     defaultCountryCode: '1',
-    signUp: [
+    signUpFields: [
       {
         label: 'Email',
         key: 'email',
@@ -57,9 +57,25 @@ function App() {
           <h1>COB Portal</h1> 
           
             
-              <Authenticator usernameAlias="email" formFields={formFields}>
-                
-              </Authenticator>
+          <AmplifyAuthenticator>
+          <CustomSignUp />
+          <AmplifySignUp
+            slot="sign-up"
+            usernameAlias="email"
+            formFields={[
+              // { type: "username" },
+              { type: "email" },
+              { type: "password" },
+              {
+                type: "string",
+                label: "Birthdate",
+                key: "birthdate",
+                placeholder: 3,
+                required: true,
+              }
+            ]}
+          />
+        </AmplifyAuthenticator>
             
           
         </div>
