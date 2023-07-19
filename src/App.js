@@ -30,21 +30,21 @@ function App() {
         label: 'Given Name',
         key: 'given_name',
         required: true,
-        displayOrder: 3,
+        displayOrder: 4,
         type: 'string'
       },
       {
         label: 'Family Name',
         key: 'family_name',
         required: true,
-        displayOrder: 4,
+        displayOrder: 5,
         type: 'string'
       },
       {
         label: 'Birthdate',
         key: 'birthdate',
         required: true,
-        displayOrder: 5,
+        displayOrder: 6,
         type: 'string'
       },
     ]
