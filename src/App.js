@@ -15,35 +15,35 @@ function App() {
       {
         label: 'Email',
         key: 'email',
-        isRequired: true,
+        required: true,
         displayOrder: 1,
         type: 'string'
       },
       {
         label: 'Password',
         key: 'password',
-        isRequired: true,
+        required: true,
         displayOrder: 2,
         type: 'password'
       },
       {
         label: 'Given Name',
         key: 'given_name',
-        isRequired: true,
+        required: true,
         displayOrder: 3,
         type: 'string'
       },
       {
         label: 'Family Name',
         key: 'family_name',
-        isRequired: true,
+        required: true,
         displayOrder: 4,
         type: 'string'
       },
       {
         label: 'Birthdate',
         key: 'birthdate',
-        isRequired: true,
+        required: true,
         displayOrder: 5,
         type: 'string'
       },
