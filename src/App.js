@@ -57,7 +57,7 @@ function App() {
           <h1>COB Portal</h1> 
           
             
-              <Authenticator formFields={formFields}>
+              <Authenticator usernameAlias="email" signUpConfig={signUpConfig}>
                 
               </Authenticator>
             
