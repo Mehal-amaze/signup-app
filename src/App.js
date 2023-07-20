@@ -7,61 +7,39 @@ import '@aws-amplify/ui-react/styles.css';
 //import store from './redux/store'; 
 
 function App() {
-  const signUpConfig = {
-    header: 'Create a new account',
-    hideAllDefaults: true,
-    defaultCountryCode: '1',
-    signUpFields: [
-      {
-        label: 'Email',
-        key: 'email',
-        required: true,
-        displayOrder: 1,
-        type: 'string'
+  const formFields = {
+    signUp: {
+      email: {
+        order:1
       },
-      {
-        label: 'Password',
-        key: 'password',
-        required: true,
-        displayOrder: 2,
-        type: 'password'
+      family_name: {
+        order: 2
       },
-      {
-        label: 'Given Name',
-        key: 'given_name',
-        required: true,
-        displayOrder: 4,
-        type: 'string'
+      preferred_username: {
+        order: 4
       },
-      {
-        label: 'Family Name',
-        key: 'family_name',
-        required: true,
-        displayOrder: 5,
-        type: 'string'
+      birthdate: {
+        order: 3
       },
-      {
-        label: 'Birthdate',
-        key: 'birthdate',
-        required: true,
-        displayOrder: 6,
-        type: 'string'
+      password: {
+        order: 5
       },
-    ]
-  };
-
-  return (
-    
-        <div className="App">
-          <h1>COB Portal</h1> 
-              <Authenticator usernameAlias="email" signUpConfig={signUpConfig}>
-                
-              </Authenticator>
-            
-          
-        </div>
-      
-  );
+      confirm_password: {
+        order: 6
+      }
+    },
+   }
+ 
+ 
+ // Adding the signUpAttributes prop is typically not needed since attributes are inferred via Zero Configuration.
+ // For the sake of this example they have been explicitly added so you can copy and paste this into your own application and see it work. 
+ const signUpAttributes={['birthdate', 'family_name', 'preferred_username']}
+ 
+ export default function App() {
+   return (
+     <Authenticator formFields={formFields} signUpAttributes={signUpAttributes}>
+       {({ signOut }) => <button onClick={signOut}>Sign out</button>}
+     </Authenticator>
+   );
+ }
 }
-
-export default App;
