@@ -33,7 +33,7 @@ function App() {
  
  // Adding the signUpAttributes prop is typically not needed since attributes are inferred via Zero Configuration.
  // For the sake of this example they have been explicitly added so you can copy and paste this into your own application and see it work. 
- const signUpAttributes={['birthdate', 'family_name', 'preferred_username']}
+ const signUpAttributes=['birthdate', 'family_name', 'preferred_username']}
  
  export default function App() {
    return (
