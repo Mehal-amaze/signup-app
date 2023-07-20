@@ -7,31 +7,27 @@ import '@aws-amplify/ui-react/styles.css';
 //import store from './redux/store'; 
 
 const formFields = {
-  header: 'Create a new account',
-    hideAllDefaults: true,
-    defaultCountryCode: '1',
-   
-    signUp: {
-      email: {
-        order:1
-      },
-      family_name: {
-        order: 2
-      },
-      preferred_username: {
-        order: 4
-      },
-      birthdate: {
-        order: 3
-      },
-      password: {
-        order: 5
-      },
-      confirm_password: {
-        order: 6
-      }
+  signUp: {
+    email: {
+      order:1
     },
-   }
+    family_name: {
+      order: 2
+    },
+    preferred_username: {
+      order: 4
+    },
+    birthdate: {
+      order: 3
+    },
+    password: {
+      order: 5
+    },
+    confirm_password: {
+      order: 6
+    }
+  },
+ }
 
 
 // Adding the signUpAttributes prop is typically not needed since attributes are inferred via Zero Configuration.
@@ -45,4 +41,3 @@ export default function App() {
    </Authenticator>
  );
 }
-
