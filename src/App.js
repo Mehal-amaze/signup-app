@@ -10,54 +10,37 @@ const formFields = {
   header: 'Create a new account',
     hideAllDefaults: true,
     defaultCountryCode: '1',
-    signUp: 
-      {
-        label: 'Email',
-        key: 'email',
-        isRequired: true,
-        displayOrder: 1,
-        type: 'string'
-      ,
-      
-        label: 'Password',
-        key: 'password',
-        isRequired: true,
-        displayOrder: 2,
-        type: 'password'
-      ,
-      
-        label: 'Given Name',
-        key: 'given_name',
-        isRequired: true,
-        displayOrder: 3,
-        type: 'string'
-      ,
-      
-        label: 'Family Name',
-        key: 'family_name',
-        isRequired: true,
-        displayOrder: 4,
-        type: 'string'
-      ,
-      
-        label: 'Birthdate',
-        key: 'birthdate',
-        isRequired: true,
-        displayOrder: 5,
-        type: 'string'
-      ,
-    
-  }
-}
+   
+    signUp: {
+      email: {
+        order:1
+      },
+      family_name: {
+        order: 2
+      },
+      preferred_username: {
+        order: 4
+      },
+      birthdate: {
+        order: 3
+      },
+      password: {
+        order: 5
+      },
+      confirm_password: {
+        order: 6
+      }
+    },
+   }
 
 
 // Adding the signUpAttributes prop is typically not needed since attributes are inferred via Zero Configuration.
 // For the sake of this example they have been explicitly added so you can copy and paste this into your own application and see it work. 
-//const signUpAttributes=['birthdate', 'family_name', 'preferred_username']
+const signUpAttributes=['birthdate', 'family_name', 'preferred_username']
 
 export default function App() {
  return (
-   <Authenticator formFields={formFields} >
+   <Authenticator formFields={formFields} signUpAttributes={signUpAttributes}>
      {({ signOut }) => <button onClick={signOut}>Sign out</button>}
    </Authenticator>
  );
