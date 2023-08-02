@@ -40,4 +40,4 @@ export default function App() {
      {({ signOut }) => <button onClick={signOut}>Sign out</button>}
    </Authenticator>
  );
-}
+} 
